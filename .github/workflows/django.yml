@@ -3,8 +3,7 @@ name: Django CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+ 
 
 jobs:
   build:
@@ -34,6 +33,6 @@ jobs:
         git remote add heroku https://heroku:${{ secrets.HERKOU_TOKEN }}@git.heroku.com/${{ secrets.HERKOU_NAME }}.git
     - name: Deploy to Heroku 
       run: |
-        git push heroku HEAD:master -f
+        git push heroku HEAD:main -f
       
       
